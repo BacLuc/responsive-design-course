@@ -2,11 +2,27 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      .wrapper {
+      .wrapper { 
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
       }
+      @media screen and (min-width: 300px) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+       }
+      } 
+      @media screen and (min-width: 450px) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+       }
+      }
+      
 
+      .wrapper > div {
+        min-width: 150px;
+        border-style: groove;
+      }
+    
       .one {
         background-color: blue;
       }

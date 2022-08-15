@@ -5,12 +5,14 @@
       .wrapper {
         display: flex;
         flex-wrap: wrap;
+        gap: 10px 0;
       }
 
       .wrapper > div {
-        flex: 1 1 0;
+        flex-grow: 1;
+        /*min-width: 33%;*/
       }
-
+     
       .one {
         background-color: blue;
       }
@@ -30,15 +32,24 @@
       .five {
         background-color: blueviolet;
       }
-      
+      @media screen and (min-width: 500px) {
+        .one, .two {
+          width: 50%;
+        }
+        .three {
+          width: 100%; 
+        }
+      } 
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <div class="one">One</div>
-      <div class="two">Two</div>
-      <div class="three">Three</div>
-      <div class="four">Four</div>
+      <div class="one">One asdf asdf asdfasdfkökj  asdfasdf</div>
+      <div class="two">
+        Two asdf asdf asdfasdfkökj  asdfasdf asdf asdf asdfasdfkökj asdfasdfasdf               asdf asdfasdfkökj  asdfasdf
+      </div>
+      <div class="three">Three asdfasfdasdf</div>
+      <div class="four">Four asdfasdf</div>
       <div class="five">Five</div>
     </div>
   </body>
