@@ -1,0 +1,101 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__menu {
+  display: none;
+}
+
+/* start here with describing the properties with comments */
+
+.hero, .top-news, .scores, .weather, .recent-news {
+  order: 10;
+}
+/* From 549px below, header logo will be 48px high and right margin 0.5em.
+*/
+@media screen and (max-width: 549px) {
+  .header__logo {
+    height: 48px;
+    margin-right: 0.5em;
+  }
+  /*At max-width 549px, header title font size is 2em and no left margin.
+  */
+  .header__title {
+    margin-left: 0;
+    font-size: 2em;
+    vertical-align: bottom; 
+  }
+  .nav {
+    /* Look that the navigation is on top of the other main. */
+    z-index: 10;
+    /* Else the background is transparent, and you cannot read the text. */
+    background-color: #fff;
+    width: 300px;
+    position: absolute;
+    /* This trasform moves the drawer off canvas. */
+    -webkit-transform: translate(-300px, 0);
+    transform: translate(-300px, 0);
+    /* Optionally, we animate the drawer. */
+    transition: transform 0.3s ease;
+  }
+  /* Makes the navigation visible. */
+  .nav.open {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  /* Describes navigation items display. */
+  .nav__item {
+    display: list-item;
+    border-bottom: 1px solid #E0E0E0;
+    width: 100%;
+    text-align: left;
+  }
+/* Describes the introductory elements, logo and project title*/
+  .header__menu {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    padding: 1em;
+  }
+  .header__menu svg {
+    width: 32px;
+    fill: #E0E0E0;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .hero {
+    order: 0;
+    width: 60%;
+  }
+  .weather {
+    order: 1;
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .hero {
+    width: 50%;
+  }
+  .top-news {
+    order: 1;
+    width: 50%;
+  }
+  .scores {
+    order: 2;
+    width: 60%;
+  }
+  .weather {
+    order: 3;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  main, .header__inner, .nav, .content {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
