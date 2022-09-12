@@ -32,6 +32,7 @@
     /* Else the background is transparent, and you cannot read the text. */
     background-color: #fff;
     width: 300px;
+    /* helps the menu display without moving the pic and the rest of the content*/
     position: absolute;
     /* This trasform moves the drawer off canvas. */
     -webkit-transform: translate(-300px, 0);
@@ -47,26 +48,37 @@
   /* Describes navigation items display. */
   .nav__item {
     display: list-item;
+    /* makes a thin gray line between the list items */
     border-bottom: 1px solid #E0E0E0;
+    /* stretch the list items to fill the whole width of the navigation, that the border also stretches the whole width.*/
     width: 100%;
+    /* Overwrites the text-align: center from main.css. */
     text-align: left;
   }
 /* Describes the introductory elements, logo and project title*/
   .header__menu {
+    /* Overwrites display: none from main.css when the screen width is small. */
     display: inline-block;
+    /* That we can use right: 0 to stick the menu to the right.*/
     position: absolute;
+    /* Stick the menu to the right side. */
     right: 0;
+    /* a little padding around the hamburger menu that it looks better */
     padding: 1em;
   }
   .header__menu svg {
+    /* limit the width of the 3 bars, else it gets to large */
     width: 32px;
+    /* change the color of the bars. Else it would be a sharp black */
     fill: #E0E0E0;
   }
 }
 
 @media screen and (min-width: 550px) {
   .hero {
+    /* switch place with the weather widget, that the hero is on the left */
     order: 0;
+    /* show both widgets on one row*/
     width: 60%;
   }
   .weather {
@@ -77,12 +89,15 @@
 
 @media screen and (min-width: 700px) {
   .hero {
+    /* now hero first width 50% width */
     width: 50%;
   }
   .top-news {
+    /* then top news on the same row*/
     order: 1;
     width: 50%;
   }
+  /*and scores and weather on the next row */
   .scores {
     order: 2;
     width: 60%;
